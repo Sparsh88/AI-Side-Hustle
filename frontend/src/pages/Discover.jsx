@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { motion, AnimatePresence } from 'framer-motion';
-import { BrainCircuit, IndianRupee, Clock, Sparkles, AlertCircle, RefreshCw } from 'lucide-react';
+import { IndianRupee } from 'lucide-react';
 import HustleForm from '../components/HustleForm';
 import HustleCard from '../components/HustleCard';
 import Loader from '../components/Loader';
-
 import { API_BASE_URL } from '../config';
 
 function Discover() {
@@ -38,10 +37,11 @@ function Discover() {
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-surface/80 border border-white/10 mb-6 backdrop-blur-md"
+          whileHover={{ scale: 1.05 }}
+          className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-surface/80 border border-white/10 mb-6 backdrop-blur-md cursor-pointer"
         >
           <IndianRupee className="w-5 h-5 text-gray-400" />
-          <span className="text-sm font-medium text-gray-200">AI-Powered Discovery</span>
+          <span className="text-sm font-semibold text-gray-200">AI-Powered Discovery</span>
         </motion.div>
         
         <motion.h1 
@@ -70,9 +70,13 @@ function Discover() {
 
       {/* Error Handling */}
       {error && (
-        <div className="mt-8 p-4 bg-red-500/10 border border-red-500/20 rounded-xl text-center text-red-400 max-w-2xl mx-auto backdrop-blur-md">
+        <motion.div 
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mt-8 p-4 bg-red-500/10 border border-red-500/20 rounded-2xl text-center text-red-400 max-w-2xl mx-auto backdrop-blur-md font-medium"
+        >
           {error}
-        </div>
+        </motion.div>
       )}
 
       {/* Loading State & Results */}
@@ -92,11 +96,13 @@ function Discover() {
           {!isLoading && results.length > 0 && (
             <motion.div 
               key="results"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               className="space-y-6"
             >
-              <h2 className="text-2xl font-semibold text-white mb-8 text-center flex items-center justify-center gap-2">
-                <span className="bg-primary-500/20 text-primary-300 py-1 px-3 rounded-lg text-sm">
-                  {results.length} Matches Found
+              <h2 className="text-2xl font-bold text-white mb-8 text-center flex items-center justify-center gap-2">
+                <span className="bg-primary-500/20 text-primary-300 py-1.5 px-4 rounded-full text-sm font-bold border border-primary-500/30">
+                  ✨ {results.length} Matches Found
                 </span>
               </h2>
               

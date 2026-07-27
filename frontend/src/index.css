@@ -1,21 +1,76 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 @layer base {
   body {
-    @apply bg-background text-white font-sans antialiased selection:bg-primary-500 selection:text-white min-h-screen;
+    @apply bg-background text-white font-sans antialiased selection:bg-primary-500 selection:text-white min-h-screen overflow-x-hidden;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0d0f17;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(139, 92, 246, 0.3);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(139, 92, 246, 0.6);
   }
 }
 
 @layer utilities {
   .glass-panel {
-    @apply bg-surface/60 backdrop-blur-lg border border-white/10 shadow-xl;
+    @apply bg-surface/60 backdrop-blur-xl border border-white/10 shadow-2xl transition-all duration-300;
+  }
+
+  .glass-panel-hover {
+    @apply hover:bg-surface/80 hover:border-primary-500/40 hover:shadow-[0_0_30px_rgba(139,92,246,0.15)];
   }
   
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-purple-400;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-300 via-purple-400 to-pink-400;
   }
+
+  .text-gradient-blue {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-teal-300 to-emerald-400;
+  }
+
+  .glow-purple {
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.3);
+  }
+
+  .glow-purple-lg {
+    box-shadow: 0 0 50px rgba(139, 92, 246, 0.4);
+  }
+}
+
+/* Keyframe animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 6s ease-in-out infinite;
 }

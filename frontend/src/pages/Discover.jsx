@@ -6,6 +6,8 @@ import HustleForm from '../components/HustleForm';
 import HustleCard from '../components/HustleCard';
 import Loader from '../components/Loader';
 
+import { API_BASE_URL } from '../config';
+
 function Discover() {
   const [isLoading, setIsLoading] = useState(false);
   const [results, setResults] = useState([]);
@@ -17,7 +19,7 @@ function Discover() {
     setResults([]);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/get-hustles', formData);
+      const response = await axios.post(`${API_BASE_URL}/api/get-hustles`, formData);
       setResults(response.data.suggestions);
     } catch (err) {
       console.error(err);

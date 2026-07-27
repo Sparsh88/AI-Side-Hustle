@@ -3,6 +3,8 @@ import { MessageCircle, X, Send, Bot } from 'lucide-react';
 import axios from 'axios';
 import { motion, AnimatePresence } from 'framer-motion';
 
+import { API_BASE_URL } from '../config';
+
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
@@ -33,7 +35,7 @@ const Chatbot = () => {
       // Prepare history (excluding the very first generic greeting to save tokens if we want, but let's send it all for context)
       const history = messages.map(msg => ({ sender: msg.sender, text: msg.text }));
 
-      const response = await axios.post('http://localhost:5000/api/chat', {
+      const response = await axios.post(`${API_BASE_URL}/api/chat`, {
         message: userMessage.text,
         history: history
       });

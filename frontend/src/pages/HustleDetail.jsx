@@ -5,6 +5,8 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, Rocket, Wrench, Clock, CheckCircle, AlertCircle } from 'lucide-react';
 import Loader from '../components/Loader';
 
+import { API_BASE_URL } from '../config';
+
 const HustleDetail = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -41,7 +43,7 @@ const HustleDetail = () => {
 
     const fetchDetails = async () => {
       try {
-        const response = await axios.post('http://localhost:5000/api/get-hustle-details', {
+        const response = await axios.post(`${API_BASE_URL}/api/get-hustle-details`, {
           title: hustle.title,
           description: hustle.description
         });

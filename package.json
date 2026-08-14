@@ -1,0 +1,15 @@
+{
+  "name": "ai-side-hustle-root",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Root workspace proxy for AI Side Hustle Finder",
+  "scripts": {
+    "build": "npm --prefix backend install",
+    "start": "npm --prefix backend start",
+    "backend:dev": "npm --prefix backend run dev",
+    "frontend:dev": "npm --prefix frontend run dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

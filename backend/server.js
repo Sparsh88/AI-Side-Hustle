@@ -5,12 +5,53 @@ import { generateHustleSuggestions, generateHustleRoadmap, chatWithBot } from '.
 
 dotenv.config();
 
+// Global process error handlers
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('Unhandled Rejection at:', promise, 'reason:', reason);
+});
+
+process.on('uncaughtException', (err) => {
+  console.error('Uncaught Exception thrown:', err);
+});
+
 const app = express();
 const PORT = process.env.PORT || 5000;
+const HOST = '0.0.0.0';
 
 // Middleware
-app.use(cors());
+const allowedOrigin = process.env.FRONTEND_URL || '*';
+app.use(cors({
+  origin: allowedOrigin,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(express.json());
+
+// Health Check Endpoints
+app.get('/', (req, res) => {
+  res.status(200).json({
+    status: 'ok',
+    service: 'AI Side Hustle Finder API',
+    message: 'Backend service is active and running',
+    timestamp: new Date().toISOString()
+  });
+});
+
+app.get('/health', (req, res) => {
+  res.status(200).json({
+    status: 'ok',
+    message: 'API is healthy',
+    timestamp: new Date().toISOString()
+  });
+});
+
+app.get('/api/health', (req, res) => {
+  res.status(200).json({
+    status: 'ok',
+    message: 'API is healthy',
+    timestamp: new Date().toISOString()
+  });
+});
 
 // Routes
 app.post('/api/get-hustles', async (req, res) => {
@@ -66,6 +107,24 @@ app.post('/api/chat', async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+// 404 Handler
+app.use((req, res) => {
+  res.status(404).json({ error: 'Route not found' });
 });
+
+// Global Error Handler
+app.use((err, req, res, next) => {
+  console.error('Express Error Handler caught:', err);
+  res.status(500).json({ error: 'Internal Server Error' });
+});
+
+try {
+  app.listen(PORT, HOST, () => {
+    console.log(`Server is running on http://${HOST}:${PORT}`);
+    console.log(`Health check available at http://${HOST}:${PORT}/health`);
+  });
+} catch (startupError) {
+  console.error('Server startup failed:', startupError);
+  process.exit(1);
+}
+

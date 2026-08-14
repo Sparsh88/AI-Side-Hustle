@@ -1,282 +1,168 @@
 # AI Side Hustle Finder
 
-An AI-powered full-stack web application that transforms user skills, interests, time availability, and budget into personalized side hustle recommendations, phased action roadmaps, and real-time conversational mentoring.
+An AI-driven full-stack web application that analyzes user skills, interests, time availability, and budget to generate tailored side hustle recommendations, phased action roadmaps, and real-time conversational mentoring.
 
 ---
 
-## 🔗 Live Demo & Repository
+## Live Demo & Repository
 
-- **Live Demo**: [ai-side-hustle-finder.vercel.app](https://ai-side-hustle-finder.vercel.app)
-- **GitHub Repository**: [github.com/Sparsh88/AI-Side-Hustle](https://github.com/Sparsh88/AI-Side-Hustle)
-
----
-
-## 📖 Overview
-
-**AI Side Hustle Finder** is a full-stack platform designed to help students, freelancers, and aspiring entrepreneurs discover practical side income streams tailored to their specific background and constraints.
-
-Rather than presenting generic, overwhelming lists of business ideas, the application analyzes a user's technical and non-technical skills, personal interests, weekly time commitment, and starting budget. It leverages **OpenAI GPT-4o** in structured JSON mode to generate tailored side hustle options alongside step-by-step execution roadmaps. Additionally, an embedded chat assistant powered by **Google Gemini 2.5 Flash** provides interactive guidance on pricing, client outreach, and freelancing strategies.
-
-The project is architected with a decoupled frontend and backend, featuring a modern glassmorphic interface, client-side state persistence, and robust fallback mechanisms to ensure uninterrupted functionality.
+- **Live Application:** [https://ai-side-hustle-ruby.vercel.app](https://ai-side-hustle-ruby.vercel.app)
+- **GitHub Repository:** [https://github.com/Sparsh88/AI-Side-Hustle](https://github.com/Sparsh88/AI-Side-Hustle)
 
 ---
 
-## 🎯 Problem Statement
+## Overview
 
-- **Generic Information Overload**: Countless unvetted business ideas exist online without clarity on entry requirements, difficulty, or realistic outcomes.
-- **Skill and Capital Mismatch**: Most guides recommend high-barrier ventures that do not fit a beginner's current skillset or minimal budget constraints.
-- **Absence of Actionable Roadmaps**: Aspiring creators often know their target domain but struggle to break execution down into clear, sequential milestones.
-- **Lack of On-Demand Guidance**: Beginners lack immediate access to mentors for tactical questions regarding tool selection, marketplace profiles, and initial client acquisition.
+AI Side Hustle Finder is a full-stack platform designed to help students, freelancers, and aspiring entrepreneurs discover practical income streams tailored to their specific skills and resource constraints.
 
----
+Rather than presenting generic lists of business ideas, the application collects user parameters including technical and non-technical skills, personal interests, weekly time commitment, and starting budget. It leverages OpenAI GPT-4o and Google Gemini 2.5 Flash in structured JSON output mode to generate curated recommendations and step-by-step action roadmaps. An interactive conversational mentor provides real-time guidance on pricing strategies, client outreach, and marketplace profiles.
 
-## ✨ Key Features
-
-### Functional Features
-- **Personalized Hustle Matching**: Generates 6 custom side hustle opportunities matching user-defined skills, interests, available hours, and budget with contextual reasoning.
-- **Dynamic Phased Roadmaps**: Creates structured action plans broken into sequential steps, recommended tools with specific purposes, and realistic time-to-first-earnings estimates.
-- **Interactive Milestone Tracker**: Allows users to check off completed roadmap steps with real-time percentage progress updates.
-- **Saved Hustles Dashboard**: Centralized dashboard to bookmark, manage, and review active projects and overall completion metrics.
-- **AI Mentorship Chatbot**: Multi-turn conversational copilot powered by Google Gemini for real-time advice on rate setting, freelancing platforms, and workflow optimization.
-- **Resilient Fallback Engine**: Built-in intelligent fallback system that generates dynamic mock recommendations if external AI API keys are unavailable or rate-limited.
-
-### UI & UX Features
-- **Dark Glassmorphic UI**: High-contrast modern interface with backdrop blur panels, gradient accents, and responsive typography.
-- **Smooth Page Transitions & Micro-Interactions**: Fluid route animations and animated numerical statistic counters built using Framer Motion.
-- **Responsive Layout**: Fully adaptive layouts optimized for desktop, tablet, and mobile viewing.
+The application features a decoupled frontend and backend architecture, a modern glassmorphic interface, client-side state persistence, and intelligent fallback generators to maintain full functionality during external API rate limits.
 
 ---
 
-## 🛠️ Tech Stack
+## Problem Statement
+
+- **Generic Information Overload:** Unvetted online business ideas rarely account for beginner difficulty, realistic time-to-first-earnings, or prerequisite tools.
+- **Skill and Capital Mismatch:** Most online entrepreneurship guides recommend ventures requiring significant upfront capital or expertise beyond a student's profile.
+- **Absence of Actionable Roadmaps:** Aspiring creators frequently know their target niche but struggle to break execution down into clear, sequential phases.
+- **Lack of On-Demand Mentorship:** Beginners lack affordable access to experienced mentors for practical tactical advice regarding tool selection and client acquisition.
+
+---
+
+## Key Features
+
+- **Personalized Hustle Matching:** Analyzes user skills, interests, time commitment, and budget to generate 6 custom side hustle opportunities with contextual reasoning.
+- **Structured Phased Roadmaps:** Generates sequential action plans with milestone steps, recommended tools with specific purposes, and realistic time-to-income projections.
+- **Interactive Milestone Tracker:** Check off completed roadmap steps with real-time percentage progress updates and client-side persistence.
+- **Saved Hustles Dashboard:** Centralized dashboard to bookmark, manage, and review active projects and overall milestone completion metrics.
+- **AI Mentorship Chatbot:** Multi-turn conversational copilot powered by Google Gemini for real-time guidance on rate setting, freelancing platforms, and workflow optimization.
+- **Resilient Fallback Engine:** Built-in heuristic fallback system that generates structured recommendations if external AI API keys are unavailable or rate-limited.
+- **Dark Glassmorphic UI:** Modern high-contrast interface with backdrop blur panels, gradient accents, and responsive typography.
+
+---
+
+## Tech Stack
 
 | Category | Technology | Purpose |
 |---|---|---|
-| **Frontend Framework** | React 19, Vite | Component-based Single-Page Application (SPA) with fast build tooling |
-| **Styling & Design** | Tailwind CSS | Utility-first styling with custom glassmorphism effects and dark palette |
-| **Animations** | Framer Motion | Smooth layout animations, page transitions, and progress effects |
-| **Iconography** | Lucide React | Clean, scalable vector icons across all UI components |
-| **HTTP Client** | Axios | Promise-based client for REST API communication |
-| **Backend Framework** | Node.js, Express.js | Modular REST API server handling request validation, routing, and CORS |
-| **AI — Recommendations & Roadmaps** | OpenAI API (`gpt-4o`) | Structured JSON generation for tailored hustles and phased execution steps |
-| **AI — Conversational Chatbot** | Google Generative AI (`gemini-2.5-flash`) | Multi-turn conversational assistant with structured history management |
-| **State Persistence** | Web Storage (`localStorage`) | Client-side persistence for bookmarked hustles and checklist progress |
-| **Deployment** | Vercel (Frontend), Render (Backend) | Static hosting for the React client and cloud hosting for the Node API |
+| Frontend Framework | React 18, Vite | Single-page client application with rapid hot-module replacement |
+| Styling & UI | Tailwind CSS, Lucide React | Modern glassmorphic styling, responsive layout, and iconography |
+| Animations | Framer Motion | Smooth route transitions, modal reveals, and animated statistic counters |
+| Backend Runtime | Node.js, Express.js | REST API server for AI prompt engineering and data orchestration |
+| AI / LLM Integrations | OpenAI GPT-4o, Google Gemini 2.5 Flash | Structured JSON generation for recommendations, roadmaps, and chat |
+| Data Persistence | LocalStorage API | Client-side caching of user preferences, bookmarked hustles, and progress |
+| Deployment | Vercel | Production cloud deployment for frontend and backend |
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```text
-┌────────────────────────────────────────────────────────────────────────┐
-│                          Client (Browser)                              │
-│                                                                        │
-│   ┌────────────────────────────────────────────────────────────────┐   │
-│   │               React 19 SPA (Vite + Tailwind CSS)               │   │
-│   └───────────────┬────────────────────────────────┬───────────────┘   │
-│                   │ Local Sync                     │ Axios Client      │
-│                   ▼                                ▼                   │
-│          localStorage Engine                HTTP Requests (JSON)       │
-│        (Bookmarks & Milestones)                    │                   │
-└───────────────────┼────────────────────────────────┼───────────────────┘
-                    │                                │
-                    │                                ▼
-                    │               ┌──────────────────────────────────┐
-                    │               │      Express.js Backend API      │
-                    │               │       (Node.js / Render)         │
-                    │               └────┬────────────────────────┬────┘
-                    │                    │                        │
-                    │                    ▼                        ▼
-                    │          ┌───────────────────┐    ┌─────────────────┐
-                    │          │   OpenAI GPT-4o   │    │  Google Gemini  │
-                    │          │ (Ideas & Roadmap) │    │ (Chat Copilot)  │
-                    │          └───────────────────┘    └─────────────────┘
+User Browser (React 18 SPA + Framer Motion)
+     │
+     ├──> LocalStorage (Saved Hustles & Progress State)
+     │
+     └──> REST API Requests
+               │
+               ▼
+       Express.js Server (Node.js)
+         ├── Request Validation & Parameter Normalization
+         ├── Fallback Generator Engine (Deterministic Mock Mode)
+         └── AI Services
+               ├── OpenAI GPT-4o (Structured Hustle & Roadmap JSON)
+               └── Google Gemini 2.5 Flash (Conversational Mentorship API)
 ```
 
 ---
 
-## 🔄 Application Flow
+## Application Flow
 
-1. **User Profile Input**: The user navigates to the Discover page and submits their skills, interests, weekly hours, and startup budget.
-2. **Backend Processing**: The Express backend validates request inputs at `/api/get-hustles` and queries OpenAI GPT-4o with strict JSON schema instructions.
-3. **Matching & Display**: The client receives and renders 6 personalized side hustle cards with custom match rationales.
-4. **Roadmap Generation**: Clicking a hustle triggers a request to `/api/get-hustle-details`, returning a 4-step action plan, required tools, and timeline.
-5. **Progress & Persistence**: The user bookmarks hustles and toggles milestone checkboxes, saving state in `localStorage` with cross-component event sync.
-6. **AI Mentoring**: The user opens the floating chatbot at any point to ask contextual freelancing and execution questions via Google Gemini.
+1. **Parameter Input:** User selects skills, interests, weekly hours (e.g. 5–20 hrs), and starting budget.
+2. **AI Recommendation:** The frontend sends parameters to the backend; GPT-4o generates 6 structured side hustle cards.
+3. **Roadmap Generation:** User clicks a hustle to generate a multi-phase action plan with step-by-step milestones and recommended tools.
+4. **Milestone Tracking:** User checks off completed steps in the roadmap; progress percentage updates in real time.
+5. **Bookmark & Dashboard:** User saves preferred hustles to the central dashboard for ongoing tracking.
+6. **Conversational Mentorship:** User opens the Gemini-powered AI chatbot to ask follow-up questions regarding pricing, portfolio setup, and client acquisition.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 AI-Side-Hustle-Finder/
 ├── backend/
-│   ├── services/
-│   │   └── aiService.js         # OpenAI & Gemini service integration + fallback generators
-│   ├── .env.example             # Environment variable template
-│   ├── package.json             # Express, cors, dotenv, openai, @google/generative-ai
-│   └── server.js                # Express app setup, API routes, and error handling
+│   ├── server.js              # Express API endpoints (/api/hustles, /api/roadmap, /api/chat)
+│   ├── package.json
+│   └── .env.example
 ├── frontend/
-│   ├── public/                  # Static assets and favicon
 │   ├── src/
-│   │   ├── components/          # Reusable UI components (HustleForm, HustleCard, Chatbot, etc.)
-│   │   ├── pages/               # Views (Home, Discover, Dashboard, HustleDetail, Progress)
-│   │   ├── App.jsx              # Main routing and global layout wrapper
-│   │   ├── config.js            # Dynamic API base URL configuration
-│   │   ├── index.css            # Tailwind CSS directives and custom utility styles
-│   │   └── main.jsx             # React DOM root entry point
-│   ├── package.json             # React 19, Vite, Tailwind CSS, Framer Motion
-│   └── vite.config.js           # Vite bundler configuration
-├── package.json                 # Root workspace scripts proxy
-├── render.yaml                  # Infrastructure-as-code deployment blueprint for Render
-└── README.md                    # Project documentation
+│   │   ├── components/        # Hero, InputForm, HustleCard, RoadmapModal, ChatBot, Dashboard
+│   │   ├── data/              # Fallback templates and default categories
+│   │   ├── App.jsx            # State management and primary view switching
+│   │   ├── main.jsx           # React DOM root
+│   │   └── index.css          # Tailwind directives
+│   ├── package.json
+│   ├── tailwind.config.js
+│   └── vite.config.js
+└── README.md
 ```
 
 ---
 
-## 📡 API Endpoints
-
-### 1. Generate Hustle Matches
-- **Endpoint**: `POST /api/get-hustles`
-- **Payload**:
-  ```json
-  {
-    "skills": "React, Python, Content Writing",
-    "interests": "AI, Fitness, Web Design",
-    "time": "5-10 hrs",
-    "budget": "low"
-  }
-  ```
-- **Response (`200 OK`)**:
-  ```json
-  {
-    "suggestions": [
-      {
-        "title": "Freelance React Specialist",
-        "description": "Offer web development services to small businesses and creators.",
-        "matchReason": "Directly utilizes your React skillset and fits your weekly schedule."
-      }
-    ]
-  }
-  ```
-
-### 2. Generate Action Roadmap
-- **Endpoint**: `POST /api/get-hustle-details`
-- **Payload**:
-  ```json
-  {
-    "title": "Freelance React Specialist",
-    "description": "Offer web development services to small businesses and creators."
-  }
-  ```
-- **Response (`200 OK`)**:
-  ```json
-  {
-    "details": {
-      "steps": [
-        { "title": "Portfolio Setup", "description": "Build 2 showcase projects." }
-      ],
-      "tools": [
-        { "name": "Vercel / GitHub", "purpose": "Project hosting and version control." }
-      ],
-      "timeline": "2-4 weeks to first earnings"
-    }
-  }
-  ```
-
-### 3. Conversational AI Chat
-- **Endpoint**: `POST /api/chat`
-- **Payload**:
-  ```json
-  {
-    "message": "How should I structure my pricing for beginner web design projects?",
-    "history": []
-  }
-  ```
-- **Response (`200 OK`)**:
-  ```json
-  {
-    "reply": "Start with competitive fixed-price milestone packages to secure your first 3 positive reviews..."
-  }
-  ```
-
-### 4. Health Check
-- **Endpoint**: `GET /health`
-- **Response (`200 OK`)**:
-  ```json
-  {
-    "status": "ok",
-    "message": "API is healthy",
-    "timestamp": "2026-08-14T17:35:00.000Z"
-  }
-  ```
-
----
-
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
-- **Node.js**: `v18.0.0` or higher
-- **npm** package manager
-- **OpenAI API Key** (optional: app automatically uses fallback data if omitted)
-- **Google Gemini API Key** (optional: chat falls back to built-in guidance if omitted)
 
----
+- **Node.js**: v18.0.0 or higher
+- **npm**: v9.0.0 or higher
 
 ### 1. Clone the Repository
+
 ```bash
 git clone https://github.com/Sparsh88/AI-Side-Hustle.git
 cd AI-Side-Hustle
 ```
 
----
+### 2. Backend Setup
 
-### 2. Backend Configuration & Setup
 ```bash
 cd backend
 npm install
 ```
 
-Create a `.env` file in the `backend/` directory:
+Create `backend/.env`:
+
 ```env
 PORT=5000
-FRONTEND_URL=http://localhost:5173
-OPENAI_API_KEY=your_openai_api_key
-GEMINI_API_KEY=your_gemini_api_key
+OPENAI_API_KEY=your_openai_api_key       # Optional: mock fallback active if omitted
+GEMINI_API_KEY=your_gemini_api_key       # Optional: fallback chat active if omitted
 ```
 
-Start the backend server:
+Start backend:
+
 ```bash
 npm run dev
 ```
-The server starts at `http://localhost:5000`.
 
----
+### 3. Frontend Setup
 
-### 3. Frontend Configuration & Setup
-In a new terminal window:
 ```bash
-cd frontend
+cd ../frontend
 npm install
-```
-
-Create a `.env` file in the `frontend/` directory (optional for local development):
-```env
-VITE_API_BASE_URL=http://localhost:5000
-```
-
-Start the frontend development server:
-```bash
 npm run dev
 ```
-The application will be accessible at `http://localhost:5173`.
+
+Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 **Sparsh Chauhan**  
-*Computer Science & Engineering | Full-Stack & AI Developer*
+*Computer Science & Engineering Student | Full Stack Developer*
 
-- **GitHub**: [@Sparsh88](https://github.com/Sparsh88)
-- **LinkedIn**: [Sparsh Chauhan](https://linkedin.com/in/sparshchauhan08)
-- **Project Repository**: [Sparsh88/AI-Side-Hustle](https://github.com/Sparsh88/AI-Side-Hustle)
+- **Portfolio:** [portfolio-flame-rho-29.vercel.app](https://portfolio-flame-rho-29.vercel.app/)
+- **GitHub:** [@Sparsh88](https://github.com/Sparsh88)
+- **LinkedIn:** [linkedin.com/in/sparshchauhan08](https://linkedin.com/in/sparshchauhan08)
+- **Email:** [sparshchauhan050@gmail.com](mailto:sparshchauhan050@gmail.com)

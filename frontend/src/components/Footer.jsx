@@ -58,14 +58,14 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="https://t.me/sparshchauhan050"
+                href="https://linkedin.com/in/sparshchauhan08"
                 target="_blank"
                 rel="noopener noreferrer"
-                title="Telegram (@sparshchauhan050)"
-                className="w-10 h-10 bg-white/5 hover:bg-[#229ED9]/20 text-gray-400 hover:text-[#229ED9] rounded-xl flex items-center justify-center transition-all duration-300 border border-white/5 hover:border-[#229ED9]/30 hover:scale-105"
+                title="LinkedIn (sparshchauhan08)"
+                className="w-10 h-10 bg-white/5 hover:bg-[#0A66C2]/20 text-gray-400 hover:text-[#0A66C2] rounded-xl flex items-center justify-center transition-all duration-300 border border-white/5 hover:border-[#0A66C2]/30 hover:scale-105"
               >
                 <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z" />
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
                 </svg>
               </a>
             </div>
